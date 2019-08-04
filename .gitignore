@@ -1,0 +1,10 @@
+# node_modules
+node_modules
+
+# editor
+.vscode
+.project
+.idea
+
+# build
+dist
