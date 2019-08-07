@@ -13,7 +13,20 @@ const config = {
     filename: 'bundle.js'
   },
   plugins: [
-    new htmlWebpackPulgin()
+    new htmlWebpackPulgin({
+      title: 'vis 数据分析',
+      filename: 'index.html',
+      template: 'src/index.html',
+      inject: true,
+      // 压缩
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true
+      },
+      chunks: ['manifest', 'vendor', 'app'],
+      chunksSortMode: 'dependency'
+    })
   ],
   module: {
     rules: [
